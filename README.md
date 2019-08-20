@@ -1,4 +1,4 @@
-# Angular crash curse
+# Angular crash course
 
 ## Install:
 
