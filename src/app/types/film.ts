@@ -5,13 +5,12 @@ export class Film {
   director: string;
 	producer: string;
   release_date: string;
-  characters: string[];
-  planets: string[];
-  starships: string[];
-  vehicles: string[];
-  species: string[];
+  characters: Array<string>;
+  planets: Array<string>;
+  starships: Array<string>;
+  vehicles: Array<string>;
+  species: Array<string>;
   created: string;
   edited: string;
   url: string;
-  results: any[];
 }

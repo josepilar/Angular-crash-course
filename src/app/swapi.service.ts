@@ -8,10 +8,11 @@ import { Film } from './types/film';
   providedIn: 'root'
 })
 export class SwapiService {
+  private corsSkipper = 'https://cors-anywhere.herokuapp.com/';
 
   constructor( private http: HttpClient ) { }
 
-  getFilms(): Observable<Film[]> {
-    return this.http.get<Film[]> ('https://swapi.co/api/films');
+  getFilms(): Observable<any> {
+    return this.http.get(`${this.corsSkipper}https://swapi.co/api/films`);
   }
 }

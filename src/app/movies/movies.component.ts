@@ -7,7 +7,7 @@ import { SwapiService } from '../swapi.service';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-  films: Film[] = [];
+  films: Array<Film> = [];
 
   constructor(private swapiService: SwapiService) { }
 
@@ -16,7 +16,7 @@ export class MoviesComponent implements OnInit {
   }
 
   getFilms(): void{
-    this.swapiService.getFilms().subscribe(films => this.films = films);
+    this.swapiService.getFilms().subscribe(films => this.films = films['results']);
   }
 
 }

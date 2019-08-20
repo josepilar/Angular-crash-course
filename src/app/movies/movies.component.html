@@ -1,1 +1,26 @@
-<p>movies works!</p>
+<div class="container">
+  <h2>Films</h2>
+  <hr>
+
+  <div class="d-flex flex-wrap justify-content-center">
+    <div *ngIf="!films.length" class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+    <div *ngFor="let film of films" class="card flex-fill" style="margin: 5px">
+      <div class="card-body">
+        <h5 class="card-title">{{film.title}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Release Date:  {{film.release_date | date}}</h6>
+        <p class="card-text">{{film.opening_crawl}}</p>
+        <!-- <a href="#" class="card-link">Card link</a> -->
+        <ul>
+          <li *ngFor="let person of people">
+            <a routerLink="/people/{{person.id}}" class="card-link">{{person.name}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <ul>
+  <li *ngFor="let film of films">{{film.title}}</li>
+</!-->
