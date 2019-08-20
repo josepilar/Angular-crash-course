@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-md-3">
   <h2>Films</h2>
   <hr>
 
@@ -9,7 +9,7 @@
     <div *ngFor="let film of films" class="card flex-fill" style="margin: 5px">
       <div class="card-body">
         <h5 class="card-title">{{film.title}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">Release Date:  {{film.release_date | date}}</h6>
+        <h6 class="card-subtitle mb-2 text-muted">Release Date: {{film.release_date | date}}</h6>
         <p class="card-text">{{film.opening_crawl}}</p>
         <!-- <a href="#" class="card-link">Card link</a> -->
         <ul>
@@ -21,6 +21,3 @@
     </div>
   </div>
 </div>
-<!-- <ul>
-  <li *ngFor="let film of films">{{film.title}}</li>
-</!-->

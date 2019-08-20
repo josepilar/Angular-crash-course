@@ -15,7 +15,7 @@ export class MoviesComponent implements OnInit {
     this.getFilms();
   }
 
-  getFilms(): void{
+  getFilms(): void {
     this.swapiService.getFilms().subscribe(films => this.films = films['results']);
   }
 
