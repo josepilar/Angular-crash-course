@@ -2,14 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MoviesComponent } from './movies/movies.component';
 import { CharactersComponent } from './characters/characters.component';
+import { BasicsComponent } from './basics/basics.componnet';
 
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'films',
-    pathMatch: 'full'
-  },
   {
     path: 'films',
     component: MoviesComponent
@@ -21,6 +17,10 @@ const routes: Routes = [
   {
     path: 'characters',
     component: CharactersComponent
+  },
+  {
+    path: '',
+    component: BasicsComponent
   }
 ];
 

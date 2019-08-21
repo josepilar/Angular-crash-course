@@ -1,0 +1,11 @@
+<h1>{{title}}</h1>
+
+<input type="text" [value]="title">
+<br>
+<br>
+<input type="text" [ngModel]="title" (ngModelChange)="title2 = $event">
+<input type="text" [(ngModel)]="title">
+<br>
+<br>
+<p>{{title2}}</p>
+
