@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SwapiService } from '../swapi.service';
 import { Character } from '../types/character';
+import { getId } from '../helpers';
 
 @Component({
   selector: 'characters',
@@ -11,6 +12,7 @@ export class CharactersComponent implements OnInit {
   characters: Array<Character>;
   more: string;
   isLoadingMore: boolean;
+  getCharacterId = getId;
 
   constructor(private swapiService: SwapiService) { }
 
@@ -33,9 +35,4 @@ export class CharactersComponent implements OnInit {
       this.isLoadingMore = false;
     })
   }
-
-  getCharacterId(character: Character): string {
-    return character.url.split('/').filter(String).pop();
-  }
-
 }

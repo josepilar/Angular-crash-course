@@ -7,8 +7,12 @@ import { CharactersComponent } from './characters/characters.component';
 const routes: Routes = [
   {
     path: '',
-    component: MoviesComponent,
+    redirectTo: 'films',
     pathMatch: 'full'
+  },
+  {
+    path: 'films',
+    component: MoviesComponent
   },
   {
     path: 'characters/:id',
