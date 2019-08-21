@@ -4,7 +4,7 @@
 
 
 ```
-npm install & ng serve
+npm install && ng serve
 ```
 
 SPA used to teach Angular.
