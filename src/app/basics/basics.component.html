@@ -1,11 +1,29 @@
-<h1>{{title}}</h1>
+<div class="container">
+  <h1>{{title}}</h1>
 
-<input type="text" [value]="title">
-<br>
-<br>
-<input type="text" [ngModel]="title" (ngModelChange)="title2 = $event">
-<input type="text" [(ngModel)]="title">
-<br>
-<br>
-<p>{{title2}}</p>
+  <input type="text" [value]="title">
+  <br>
+  <br>
+  <input type="text" [ngModel]="title" (ngModelChange)="title2 = $event">
+  <input type="text" [(ngModel)]="title">
+  <br>
+  <br>
+  <p>{{title2}}</p>
+
+  <br>
+  <br>
+  <h2>Form example</h2>
+  <br>
+  <div class="container">
+    <form action="" [formGroup]="form" (ngSubmit)="onSubmitForm()">
+      <label for="firstname">Name: </label>
+      <input formControlName="firstname" for="firstname" type="text" required [(ngModel)]="name">
+      <br>
+      <label for="lastname">Last name: </label>
+      <input type="text" formControlName="lastname" for="lastname" [(ngModel)]="lastName"  >
+      <br>
+      <button type="submit" [disabled]="!form.valid">submit</button>
+    </form>
+  </div>
+</div>
 
