@@ -1,29 +1,43 @@
 <div class="container">
-  <h1>{{title}}</h1>
-
+  <h1 [ngStyle]="{'color': titleColor}">{{title || 'No title available'}}
+    <input type="color" [(ngModel)]="titleColor">
+  </h1>
+  this one just displays title but no event is attached <br>
   <input type="text" [value]="title">
   <br>
   <br>
+  this updates the title 2 <br>
   <input type="text" [ngModel]="title" (ngModelChange)="title2 = $event">
+  <br>
+  this one uses two way data binding and updates the title directly <br>
   <input type="text" [(ngModel)]="title">
   <br>
   <br>
-  <p>{{title2}}</p>
+  <h4>This is the title2 value: {{title2}}</h4>
 
   <br>
   <br>
   <h2>Form example</h2>
   <br>
   <div class="container">
-    <form action="" [formGroup]="form" (ngSubmit)="onSubmitForm()">
+    <form [formGroup]="form" (ngSubmit)="onSubmitForm()">
       <label for="firstname">Name: </label>
-      <input formControlName="firstname" for="firstname" type="text" required [(ngModel)]="name">
+      <input formControlName="firstname" for="firstname" type="text" required [(ngModel)]="firstname">
+      <br>
+      <label class="text-danger" *ngIf="form.controls.firstname.invalid">error on first name</label>
       <br>
       <label for="lastname">Last name: </label>
       <input type="text" formControlName="lastname" for="lastname" [(ngModel)]="lastName"  >
       <br>
+      <label class="text-danger" *ngIf="form.controls.lastname.invalid">error on last name</label>
+      <br>
       <button type="submit" [disabled]="!form.valid">submit</button>
     </form>
   </div>
+  <br>
+  <button (click)="cleanValues()" class="btn btn-{{buttonClass}}">Clean everything</button>
+  <br>
+  <br>
+  <input type="text" [(ngModel)]="buttonClass">
 </div>
 

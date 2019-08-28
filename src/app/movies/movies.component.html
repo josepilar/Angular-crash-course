@@ -12,7 +12,6 @@
             <h5 class="card-title">{{film.title}}</h5>
             <h6 class="card-subtitle mb-2 text-muted">Release Date: {{film.release_date | date}}</h6>
             <p class="card-text">{{film.opening_crawl | slice:0:150}}... <a routerLink="/films/{{film.episode_id}}">More</a></p>
-            <!-- <a href="#" class="card-link">Card link</a> -->
             <ul>
               <li *ngFor="let person of people">
                 <a routerLink="/people/{{person.id}}" class="card-link">{{person.name}}</a>

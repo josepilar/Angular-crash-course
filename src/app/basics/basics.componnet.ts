@@ -8,8 +8,10 @@ import { FormsModule, FormGroup, FormBuilder, FormControl, Validators } from '@a
 export class BasicsComponent{
   title: string = "Basics stater"
   title2: string;
+  buttonClass: string = 'info';
+  titleColor: string = '#c579b6';
   form: FormGroup;
-  name: string;
+  firstname: string;
   lastName: string;
   constructor(private formBuilder: FormBuilder) {
     this.form = this.createForm();
@@ -17,12 +19,21 @@ export class BasicsComponent{
 
   createForm(): FormGroup{
     return new FormGroup({
-      firstname: new FormControl(this.name, Validators.required),
+      firstname: new FormControl(this.firstname, Validators.required),
       lastname: new FormControl(this.lastName, [
         Validators.minLength(3),
+        Validators.email,
         Validators.required
         ])
     });
+  }
+
+  cleanValues():void {
+    console.log('perro');
+    this.title = '';
+    this.title2 = '';
+    this.firstname = '';
+    this.lastName = '';
   }
 
   onSubmitForm():void {
